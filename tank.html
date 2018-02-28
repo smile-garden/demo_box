@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>坦克发射</title>
+	<link rel="stylesheet" href="./css/reset.css">
+	<style>
+		.tank{ width: 400px; height: 280px; margin: 100px auto; border: 4px solid #666; border-radius: 0 0 10px 10px;}
+		.field{ width: 300px; height: 150px; margin: 0 auto; background: #4080ff; border-radius: 0 0 150px 150px;}
+		.field:before{ width: 80px; height: 80px; border-radius: 50%; box-shadow: 0 140px 0 -30px #f33, 0 180px 0 -30px #f33, 0 220px 0 -30px #f33, 0 260px 0 -30px #f33, 0 300px 0 -30px #f33; animation: 3s go infinite linear, .1s shot infinite ease-in;}
+		.field:before, .field:after{ content: ''; display: block; background: #fff; margin: 0 auto;}
+		.field:after{width: 16px; height: 60px; transform-origin: center -40px; border-radius: 0 0 6px 6px;animation: 3s go infinite linear;}
+		@keyframes go {
+			0%{
+				transform: rotate( -75deg);
+			}
+			50%{
+				transform: rotate( 75deg);
+			}
+			100%{
+				transform: rotate( -75deg);
+			}
+		}
+		@keyframes shot {
+			0%{
+				box-shadow: 0 140px 0 -30px #f33, 0 180px 0 -30px #f33, 0 220px 0 -30px #f33, 0 260px 0 -30px #f33, 0 300px 0 -30px #f33; 
+			}
+			0%{
+				box-shadow: 0 170px 0 -30px #f33, 0 210px 0 -30px #f33, 0 250px 0 -30px #f33, 0 290px 0 -30px #f33, 0 330px 0 -30px #f33; 
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="tank">
+		<div class="field"></div>
+	</div>
+</body>
+</html>
